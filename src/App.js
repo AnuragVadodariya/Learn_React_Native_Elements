@@ -1,29 +1,30 @@
 import React from "react";
-import { StyleSheet, View, SafeAreaProvider } from "react-native";
-import { Header } from "react-native-elements";
-import { Home } from "./Comp";
+import { StyleSheet, View } from "react-native";
+import { Icon } from "react-native-elements";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        {/* <SafeAreaProvider>
-          <Header
-            placement="left"
-            leftComponent={{ icon: "menu", color: "#fff" }}
-            centerComponent={{ text: "Home", style: { color: "#fff" } }}
-            rightComponent={{ icon: "home", color: "#fff" }}
-          />
-        </SafeAreaProvider> */}
-        <Header
-          statusBarProps={{ barStyle: "light-content" }}
-          barStyle="light-content"
-          leftComponent={<Home />}
-          centerComponent={{ text: "MY TITLE", style: { color: "#fff" } }}
-          containerStyle={{
-            backgroundColor: "#3D6DCC",
-            justifyContent: "space-around"
-          }}
+        <Icon name="rowing" />
+
+        <Icon name="g-translate" color="#00aced" />
+
+        <Icon name="sc-telegram" type="evilicon" color="#517fa4" />
+
+        <Icon
+          reverse
+          name="ios-american-football"
+          type="ionicon"
+          color="#517fa4"
+        />
+
+        <Icon
+          raised
+          name="rightcircle"
+          type="font-awesome"
+          color="#f50"
+          onPress={() => console.log("hello")}
         />
       </View>
     </View>
