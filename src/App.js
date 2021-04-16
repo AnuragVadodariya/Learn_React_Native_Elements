@@ -10,14 +10,23 @@ const App = () => {
     <View style={styles.app}>
       <View style={styles.header}>
         <Button title="Open Overlay Box" onPress={toggleOverlay} />
-
-        <Overlay
-          isVisible={visible}
-          onBackdropPress={toggleOverlay}
-          style={{ padding: 40 }}
-        >
-          <Text>Hello All!</Text>
-        </Overlay>
+        <View style={{ padding: 100 }}>
+          <Overlay
+            isVisible={visible}
+            onBackdropPress={toggleOverlay}
+            overlayStyle={{ padding: 100, borderRadius: 7 }}
+          >
+            <Text style={{ textAlign: "center" }}>Hello All!</Text>
+            <View>
+              {"\n"}
+              <Button
+                title="close"
+                onPress={toggleOverlay}
+                style={{ padding: 10 }}
+              />
+            </View>
+          </Overlay>
+        </View>
       </View>
     </View>
   );
