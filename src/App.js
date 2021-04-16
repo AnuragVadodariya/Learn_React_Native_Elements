@@ -1,15 +1,17 @@
 import React from "react";
-import { Text } from "react-native-elements";
+import { Tile } from "react-native-elements";
 import { View, StyleSheet } from "react-native";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Text h1>Heading 1</Text>
-        <Text h2>Heading 2</Text>
-        <Text h3>Heading 3</Text>
-        <Text h4>Heading 4</Text>
+        <Tile
+          // imageSrc={require("")}
+          title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolore exercitationem"
+          featured
+          caption="Caption Text"
+        />
       </View>
     </View>
   );
