@@ -1,6 +1,6 @@
 import React from "react";
 import { Tile } from "react-native-elements";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
 const App = () => {
   return (
@@ -8,10 +8,21 @@ const App = () => {
       <View style={styles.header}>
         <Tile
           // imageSrc={require("")}
-          title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolore exercitationem"
-          featured
-          caption="Caption Text"
-        />
+          title="Lorem ipsum dolor sit amet, consectetur"
+          icon={{ name: "play-circle", type: "font-awesome" }} // optional
+          contentContainerStyle={{ height: 70 }}
+        >
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between"
+            }}
+          >
+            <Text>Caption</Text>
+            <Text>Caption</Text>
+          </View>
+        </Tile>
       </View>
     </View>
   );
