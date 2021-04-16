@@ -1,30 +1,60 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { Avatar } from "react-native-elements";
+import { StyleSheet, View, Text } from "react-native";
+import { Avatar, Badge } from "react-native-elements";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Avatar
-          activeOpacity={0.5}
-          size="60"
-          icon={{ name: "home", color: "black" }}
-          style={{ border: 3 }}
+        <Badge
+          style={{ marginHorizontal: 20, cursor: "pointer" }}
+          value="99+"
+          status="error"
         />
-        <Avatar rounded title="AV" />
-        <Avatar
-          size="small"
-          rounded
-          onPress={() => alert("It's Work")}
-          title="ABC"
+
+        <Badge
+          style={{ padding: 20, margin: 20, cursor: "pointer" }}
+          value={<Text>My Custom Badge</Text>}
         />
+
+        <Badge
+          style={{ marginHorizontal: 20, cursor: "pointer" }}
+          status="success"
+          value="12+"
+          size={40}
+        />
+        <Badge
+          style={{ marginHorizontal: 20, cursor: "pointer" }}
+          status="error"
+          value="2+"
+          size={40}
+        />
+        <Badge
+          style={{ marginHorizontal: 20, cursor: "pointer" }}
+          status="primary"
+          value="03+"
+          size={40}
+        />
+        <Badge
+          style={{ marginHorizontal: 20, cursor: "pointer" }}
+          status="warning"
+          value="55+"
+          size={40}
+        />
+
         <Avatar
-          size="small"
           rounded
-          title="XYZ"
-          onPress={() => console.log("Works!")}
-          activeOpacity={0.7}
+          source={{
+            uri: "https://randomuser.me/api/portraits/men/41.jpg"
+          }}
+          size="large"
+        />
+
+        <Badge
+          style={{ marginHorizontal: 20, cursor: "pointer" }}
+          status="success"
+          value="9+"
+          containerStyle={{ position: "absolute", top: 20, right: 17 }}
         />
       </View>
     </View>
@@ -38,7 +68,7 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 20,
-    flexDirection: "column"
+    flexDirection: "row"
   },
   code: {
     fontFamily: "monospace, monospace"
