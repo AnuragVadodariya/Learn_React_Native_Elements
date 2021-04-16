@@ -1,36 +1,15 @@
 import React from "react";
-import { SocialIcon } from "react-native-elements";
+import { Text } from "react-native-elements";
 import { View, StyleSheet } from "react-native";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        {/* icons */}
-        <SocialIcon type="twitter" />
-        <SocialIcon raised={false} type="gitlab" />
-        <SocialIcon light type="medium" />
-        <SocialIcon light raised={false} type="medium" />
-        {/* Button */}
-        <SocialIcon
-          title="Sign In With Facebook"
-          button
-          type="facebook"
-          style={{ textAlign: "center" }}
-        />
-        <SocialIcon
-          title="Some Twitter Message"
-          button
-          type="twitter"
-          style={{ textAlign: "center" }}
-        />
-        <SocialIcon button type="medium" style={{ textAlign: "center" }} />
-        <SocialIcon
-          button
-          light
-          type="instagram"
-          style={{ textAlign: "center" }}
-        />
+        <Text h1>Heading 1</Text>
+        <Text h2>Heading 2</Text>
+        <Text h3>Heading 3</Text>
+        <Text h4>Heading 4</Text>
       </View>
     </View>
   );
