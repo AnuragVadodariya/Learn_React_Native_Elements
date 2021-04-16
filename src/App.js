@@ -1,30 +1,40 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Icon } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { Input } from "react-native-elements";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Icon name="rowing" />
-
-        <Icon name="g-translate" color="#00aced" />
-
-        <Icon name="sc-telegram" type="evilicon" color="#517fa4" />
-
-        <Icon
-          reverse
-          name="ios-american-football"
-          type="ionicon"
-          color="#517fa4"
+        <Input style={{ marginBottom: 20 }} placeholder="BASIC INPUT" />
+        <Input
+          style={{ marginBottom: 20 }}
+          placeholder="INPUT WITH ICON"
+          leftIcon={{ type: "font-awesome", name: "chevron-left" }}
         />
-
-        <Icon
-          raised
-          name="rightcircle"
-          type="font-awesome"
-          color="#f50"
-          onPress={() => console.log("hello")}
+        <Input
+          style={{ marginBottom: 20 }}
+          placeholder="INPUT WITH CUSTOM ICON"
+          leftIcon={<Icon name="user" size={24} color="black" />}
+        />
+        <Input
+          style={{ marginBottom: 20 }}
+          placeholder="Comment"
+          leftIcon={{ type: "font-awesome", name: "comment" }}
+          style={styles}
+          onChangeText={(value) => this.setState({ comment: value })}
+        />
+        <Input
+          style={{ marginBottom: 20 }}
+          placeholder="INPUT WITH ERROR MESSAGE"
+          errorStyle={{ color: "red" }}
+          errorMessage="ENTER A VALID ERROR HERE"
+        />
+        <Input
+          style={{ marginBottom: 20 }}
+          placeholder="Password"
+          secureTextEntry={true}
         />
       </View>
     </View>
