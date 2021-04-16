@@ -1,28 +1,20 @@
 import React from "react";
-import { Tile } from "react-native-elements";
+import { Tooltip } from "react-native-elements";
 import { View, StyleSheet, Text } from "react-native";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Tile
-          // imageSrc={require("")}
-          title="Lorem ipsum dolor sit amet, consectetur"
-          icon={{ name: "play-circle", type: "font-awesome" }} // optional
-          contentContainerStyle={{ height: 70 }}
+        <Tooltip
+          popover={
+            <View>
+              <Text>Info here</Text>
+            </View>
+          }
         >
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between"
-            }}
-          >
-            <Text>Caption</Text>
-            <Text>Caption</Text>
-          </View>
-        </Tile>
+          <Text>Press me</Text>
+        </Tooltip>
       </View>
     </View>
   );
