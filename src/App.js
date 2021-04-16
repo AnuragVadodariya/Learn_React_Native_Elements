@@ -1,32 +1,27 @@
-import React, { useState } from "react";
-import { Button, Overlay } from "react-native-elements";
-import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import { PricingCard } from "react-native-elements";
+import { View, StyleSheet, ScrollView } from "react-native";
 
 const App = () => {
-  const [visible, setVisible] = useState(false);
-
-  const toggleOverlay = () => setVisible(!visible);
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Button title="Open Overlay Box" onPress={toggleOverlay} />
-        <View style={{ padding: 100 }}>
-          <Overlay
-            isVisible={visible}
-            onBackdropPress={toggleOverlay}
-            overlayStyle={{ padding: 100, borderRadius: 7 }}
-          >
-            <Text style={{ textAlign: "center" }}>Hello All!</Text>
-            <View>
-              {"\n"}
-              <Button
-                title="close"
-                onPress={toggleOverlay}
-                style={{ padding: 10 }}
-              />
-            </View>
-          </Overlay>
-        </View>
+        <ScrollView>
+          <PricingCard
+            color="#4f9deb"
+            title="Premier"
+            price="$100"
+            info={["12 User", "Basic Support", "All Core Features"]}
+            button={{ title: "GET STARTED", icon: "flight-takeoff" }}
+          />
+          <PricingCard
+            color="#AD7BEA"
+            title="Free"
+            price="$00"
+            info={["10 User", "Basic Support", "Some Features"]}
+            button={{ title: "GET STARTED", icon: "flight-takeoff" }}
+          />
+        </ScrollView>
       </View>
     </View>
   );
