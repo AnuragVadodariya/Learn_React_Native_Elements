@@ -1,27 +1,31 @@
 import React from "react";
-import { PricingCard } from "react-native-elements";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { AirbnbRating } from "react-native-ratings";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <ScrollView>
-          <PricingCard
-            color="#4f9deb"
-            title="Premier"
-            price="$100"
-            info={["12 User", "Basic Support", "All Core Features"]}
-            button={{ title: "GET STARTED", icon: "flight-takeoff" }}
+        <TouchableOpacity>
+          <AirbnbRating
+            count={11}
+            reviews={[
+              "Terrible",
+              "Bad",
+              "Meh",
+              "OK",
+              "Good",
+              "Hmm...",
+              "Very Good",
+              "Wow",
+              "Amazing",
+              "Unbelievable",
+              "Jesus"
+            ]}
+            defaultRating={11}
+            size={20}
           />
-          <PricingCard
-            color="#AD7BEA"
-            title="Free"
-            price="$00"
-            info={["10 User", "Basic Support", "Some Features"]}
-            button={{ title: "GET STARTED", icon: "flight-takeoff" }}
-          />
-        </ScrollView>
+        </TouchableOpacity>
       </View>
     </View>
   );
