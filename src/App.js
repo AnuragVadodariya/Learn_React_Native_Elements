@@ -1,12 +1,30 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { Divider } from "react-native-elements";
+import { StyleSheet, View, SafeAreaProvider } from "react-native";
+import { Header } from "react-native-elements";
+import { Home } from "./Comp";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Divider style={{ backgroundColor: "blue" }} />;
+        {/* <SafeAreaProvider>
+          <Header
+            placement="left"
+            leftComponent={{ icon: "menu", color: "#fff" }}
+            centerComponent={{ text: "Home", style: { color: "#fff" } }}
+            rightComponent={{ icon: "home", color: "#fff" }}
+          />
+        </SafeAreaProvider> */}
+        <Header
+          statusBarProps={{ barStyle: "light-content" }}
+          barStyle="light-content"
+          leftComponent={<Home />}
+          centerComponent={{ text: "MY TITLE", style: { color: "#fff" } }}
+          containerStyle={{
+            backgroundColor: "#3D6DCC",
+            justifyContent: "space-around"
+          }}
+        />
       </View>
     </View>
   );
