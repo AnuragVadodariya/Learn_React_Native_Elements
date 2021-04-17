@@ -1,12 +1,20 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { Button } from "react-native-elements";
+import { Tooltip } from "react-native-elements";
+import { View, StyleSheet, Text } from "react-native";
 
 const App = () => {
   return (
     <View style={styles.app}>
       <View style={styles.header}>
-        <Button raised title="Click Here !!" titleStyle={{ borderRadius: 7 }} />
+        <Tooltip
+          popover={
+            <View>
+              <Text>Info here</Text>
+            </View>
+          }
+        >
+          <Text>Press me</Text>
+        </Tooltip>
       </View>
     </View>
   );
@@ -18,7 +26,8 @@ const styles = StyleSheet.create({
     maxWidth: 500
   },
   header: {
-    padding: 20
+    padding: 20,
+    flexDirection: "column"
   },
   code: {
     fontFamily: "monospace, monospace"
